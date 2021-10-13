@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Ejercicio3</string>
+    <string name="button">press</string>
+    <string name="value1">Number 1</string>
+    <string name="value2">Number 2</string>
+    <string name="resul">Result:</string>
 </resources>
