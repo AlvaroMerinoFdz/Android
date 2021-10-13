@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Ejercicio4</string>
+    <string name="sumar">add</string>
+    <string name="restar">subtract</string>
+    <string name="dividir">divide</string>
+    <string name="multiplicar">multiply</string>
+    <string name="value1">Number 1</string>
+    <string name="value2">Number 2</string>
+    <string name="resul">Result:</string>
+</resources>
