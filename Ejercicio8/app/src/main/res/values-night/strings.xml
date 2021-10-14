@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mac">Mac</string>
+    <string name="windows">Windows</string>
+    <string name="linux">Linux</string>
+</resources>
