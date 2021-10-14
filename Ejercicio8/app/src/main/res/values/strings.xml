@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">Ejercicio8</string>
+    <string name="app_name">Encuesta</string>
+    <string name="sistema">Preferred operating system</string>
+    <string name="especialidad">Speciality</string>
+    <string name="horas">Hours of study</string>
+    <string name="validar">Validate</string>
+    <string name="reiniciar">Restart</string>
+    <string name="cuantas">How many?</string>
+    <string name="resumen">Summary</string>
+    <string name="nombre">Name</string>
+    <string name="tu">Your Name</string>
+    <string name="anonimo">anonymous</string>
+    <string name="mac">Mac</string>
+    <string name="windows">Windows</string>
+    <string name="linux">Linux</string>
 </resources>
