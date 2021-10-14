@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">Ejemplo 1</string>
     <string name="btnAceptar">Aceptar </string>
+    <string name="msgToast">Hola: </string>
 </resources>
