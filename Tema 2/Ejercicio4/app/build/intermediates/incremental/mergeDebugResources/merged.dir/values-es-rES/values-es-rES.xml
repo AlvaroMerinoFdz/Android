@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ejercicio4</string>
+    <string name="dividir">dividir</string>
+    <string name="multiplicar">multiplicar</string>
+    <string name="restar">restar</string>
+    <string name="resul">Resultado:</string>
+    <string name="sumar">sumar</string>
+    <string name="value1">Numero 1</string>
+    <string name="value2">Numero 2</string>
+</resources>
