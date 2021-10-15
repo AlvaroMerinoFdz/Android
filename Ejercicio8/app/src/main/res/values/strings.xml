@@ -13,4 +13,6 @@
     <string name="mac">Mac</string>
     <string name="windows">Windows</string>
     <string name="linux">Linux</string>
+    <string name="correcto">Correct Validation</string>
+    <string name="estudiantes">Students</string>
 </resources>
