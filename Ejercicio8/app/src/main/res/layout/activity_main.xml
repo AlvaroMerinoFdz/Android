@@ -21,6 +21,16 @@
             android:text="@string/nombre" />
 
 
+        <EditText
+            android:id="@+id/etNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/tu"
+            android:inputType="textPersonName"
+            tools:ignore="TouchTargetSizeCheck" />
+
         <Switch
             android:id="@+id/swAnonimo"
             android:layout_width="wrap_content"
@@ -42,6 +52,7 @@
             android:text="@string/sistema" />
 
         <RadioGroup
+            android:id="@+id/rgSistema"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="20dp">
@@ -50,6 +61,7 @@
                 android:id="@+id/rbMac"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:checked="true"
                 android:text="@string/mac" />
 
             <RadioButton
@@ -104,7 +116,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:orientation="horizontal">
 
         <TextView
@@ -127,9 +139,59 @@
             android:layout_weight="1"
             android:max="6"
             android:min="1"
-            android:onClick="avanzaBarra"
             android:progress="1" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnValidar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/validar"
+            style="?android:attr/buttonBarButtonStyle" />
+
+        <Button
+            android:id="@+id/btnReinicar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/reiniciar"
+            style="?android:attr/buttonBarButtonStyle" />
+
+        <Button
+            android:id="@+id/btnCuantas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cuantas"
+            style="?android:attr/buttonBarButtonStyle" />
+
+        <Button
+            android:id="@+id/btnResumen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/resumen"
+            style="?android:attr/buttonBarButtonStyle" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtLista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
 </LinearLayout>
