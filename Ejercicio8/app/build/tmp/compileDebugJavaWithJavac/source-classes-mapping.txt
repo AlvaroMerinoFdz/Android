@@ -1,0 +1,2 @@
+com/example/ejercicio8/BuildConfig.java
+ com.example.ejercicio8.BuildConfig

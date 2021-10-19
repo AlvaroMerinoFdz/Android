@@ -1,0 +1,444 @@
+Index: ../Tema 2/.idea/.gitignore
+===================================================================
+diff --git a/../Tema 2/.idea/.gitignore b/../Tema 2/.idea/.gitignore
+deleted file mode 100644
+--- a/../Tema 2/.idea/.gitignore	(revision eaea282d445d1e77ff142511b33aa9c04b483623)
++++ /dev/null	(revision eaea282d445d1e77ff142511b33aa9c04b483623)
+@@ -1,3 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+Index: ../Ejercicio5/app/src/main/java/com/example/ejercicio5/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ejercicio5\r\n\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport android.os.Bundle\r\n\r\nclass MainActivity : AppCompatActivity() {\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_main)\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../Ejercicio5/app/src/main/java/com/example/ejercicio5/MainActivity.kt b/../Ejercicio5/app/src/main/java/com/example/ejercicio5/MainActivity.kt
+--- a/../Ejercicio5/app/src/main/java/com/example/ejercicio5/MainActivity.kt	(revision eaea282d445d1e77ff142511b33aa9c04b483623)
++++ b/../Ejercicio5/app/src/main/java/com/example/ejercicio5/MainActivity.kt	(date 1634628086891)
+@@ -2,10 +2,100 @@
+ 
+ import androidx.appcompat.app.AppCompatActivity
+ import android.os.Bundle
++import android.view.View
++import android.widget.Button
++import android.widget.TextView
++import android.widget.Toast
+ 
+ class MainActivity : AppCompatActivity() {
++
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+         setContentView(R.layout.activity_main)
++        var txtValores : TextView = findViewById(R.id.txtValores)
++        var btnDel: Button = findViewById(R.id.btnDel)
++        var btnDividir : Button = findViewById(R.id.btnDividir)
++        var btnMultiplicar : Button = findViewById(R.id.btnMultiplicar)
++        var btnMas : Button = findViewById(R.id.btnMas)
++        var btnMenos: Button = findViewById(R.id.btnMenos)
++        var btnIgual : Button = findViewById(R.id.btnIgual)
++        var btnComa :Button = findViewById(R.id.btnComa)
++
++        var btn0 : Button = findViewById(R.id.btn0)
++        var btn1 : Button = findViewById(R.id.btn1)
++        var btn2 : Button = findViewById(R.id.btn2)
++        var btn3 : Button = findViewById(R.id.btn3)
++        var btn4 : Button = findViewById(R.id.btn4)
++        var btn5 : Button = findViewById(R.id.btn5)
++        var btn6 : Button = findViewById(R.id.btn6)
++        var btn7 : Button = findViewById(R.id.btn7)
++        var btn8 : Button = findViewById(R.id.btn8)
++        var btn9 : Button = findViewById(R.id.btn9)
++        var valor1:Double = 0.0
++
++        var txtSolucion : TextView = findViewById(R.id.txtSolucion)
++
++        btnDel.setOnClickListener(){
++            txtValores.text = ""
++            txtSolucion.text = ""
++        }
++        var signo = '+'
++        btnMas.setOnClickListener(){
++            valor1  = txtValores.text.toString().toDouble()
++            txtValores.text = ""
++            signo = '+'
++
++        }
++
++        btnMenos.setOnClickListener(){
++            valor1  = txtValores.text.toString().toDouble()
++            txtValores.text = ""
++            signo = '-'
++        }
++
++        btnMultiplicar.setOnClickListener(){
++            valor1  = txtValores.text.toString().toDouble()
++            txtValores.text = ""
++            signo = '*'
++        }
++        btnDividir.setOnClickListener(){
++            valor1  = txtValores.text.toString().toDouble()
++            txtValores.text = ""
++            signo = '/'
++        }
++        btnIgual.setOnClickListener(){
++            var valor2 = txtValores.text.toString().toDouble()
++            when(signo){
++                '+' ->  txtSolucion.text = (valor1 + valor2).toString()
++                '-' -> txtSolucion.text = (valor1 - valor2).toString()
++                '*' -> txtSolucion.text = (valor1 * valor2).toString()
++                else ->{
++                    txtSolucion.text = (valor1/valor2).toString()
++                }
++            }
++        }
++    }
++    fun numeros(view:View){
++        var txtValores : TextView = findViewById(R.id.txtValores)
++        when(view.id){
++            R.id.btn0 -> txtValores.append("0")
++            R.id.btn1 -> txtValores.append("1")
++            R.id.btn2 -> txtValores.append("2")
++            R.id.btn3 -> txtValores.append("3")
++            R.id.btn4 -> txtValores.append("4")
++            R.id.btn5 -> txtValores.append("5")
++            R.id.btn6 -> txtValores.append("6")
++            R.id.btn7 -> txtValores.append("7")
++            R.id.btn8 -> txtValores.append("8")
++            R.id.btn9 -> txtValores.append("9")
++            R.id.btnComa ->{
++                if(txtValores.text.contains(".")){
++                    Toast.makeText(this,"No se puede añadir 2 comas a un número",Toast.LENGTH_LONG).show()
++                }else{
++                    txtValores.append(".")
++                }
++            }
++            else -> print("hola")
++        }
+     }
+ }
+\ No newline at end of file
+Index: ../Ejercicio5/.idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"GradleSettings\">\r\n    <option name=\"linkedExternalProjectsSettings\">\r\n      <GradleProjectSettings>\r\n        <option name=\"testRunner\" value=\"GRADLE\" />\r\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"modules\">\r\n          <set>\r\n            <option value=\"$PROJECT_DIR$\" />\r\n            <option value=\"$PROJECT_DIR$/app\" />\r\n          </set>\r\n        </option>\r\n        <option name=\"resolveModulePerSourceSet\" value=\"false\" />\r\n      </GradleProjectSettings>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../Ejercicio5/.idea/gradle.xml b/../Ejercicio5/.idea/gradle.xml
+--- a/../Ejercicio5/.idea/gradle.xml	(revision eaea282d445d1e77ff142511b33aa9c04b483623)
++++ b/../Ejercicio5/.idea/gradle.xml	(date 1634285828178)
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="GradleMigrationSettings" migrationVersion="1" />
+   <component name="GradleSettings">
+     <option name="linkedExternalProjectsSettings">
+       <GradleProjectSettings>
+Index: ../Ejercicio5/.idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"Android Studio default JDK\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../Ejercicio5/.idea/misc.xml b/../Ejercicio5/.idea/misc.xml
+--- a/../Ejercicio5/.idea/misc.xml	(revision eaea282d445d1e77ff142511b33aa9c04b483623)
++++ b/../Ejercicio5/.idea/misc.xml	(date 1634287022742)
+@@ -1,5 +1,12 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="DesignSurface">
++    <option name="filePathToZoomLevelMap">
++      <map>
++        <entry key="..\:/Users/alvar/Documents/Android/Ejercicio5/app/src/main/res/layout/activity_main.xml" value="0.24074074074074073" />
++      </map>
++    </option>
++  </component>
+   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/build/classes" />
+   </component>
+Index: ../Tema 2/.idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/Users/alvar/Documents/Android/Tema 2/app/src/main/res/layout/activity_main.xml\" value=\"0.25\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"Android Studio default JDK\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../Tema 2/.idea/misc.xml b/../Tema 2/.idea/misc.xml
+--- a/../Tema 2/.idea/misc.xml	(revision eaea282d445d1e77ff142511b33aa9c04b483623)
++++ b/../Tema 2/.idea/misc.xml	(date 1634628504079)
+@@ -1,16 +1,4 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="DesignSurface">
+-    <option name="filePathToZoomLevelMap">
+-      <map>
+-        <entry key="..\:/Users/alvar/Documents/Android/Tema 2/app/src/main/res/layout/activity_main.xml" value="0.25" />
+-      </map>
+-    </option>
+-  </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+-    <output url="file://$PROJECT_DIR$/build/classes" />
+-  </component>
+-  <component name="ProjectType">
+-    <option name="id" value="Android" />
+-  </component>
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK" />
+ </project>
+\ No newline at end of file
+Index: ../Ejercicio5/app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".MainActivity\">\r\n\r\n    <TextView\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"Hello World!\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintLeft_toLeftOf=\"parent\"\r\n        app:layout_constraintRight_toRightOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../Ejercicio5/app/src/main/res/layout/activity_main.xml b/../Ejercicio5/app/src/main/res/layout/activity_main.xml
+--- a/../Ejercicio5/app/src/main/res/layout/activity_main.xml	(revision eaea282d445d1e77ff142511b33aa9c04b483623)
++++ b/../Ejercicio5/app/src/main/res/layout/activity_main.xml	(date 1634288671340)
+@@ -1,18 +1,211 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
++    android:orientation="vertical"
+     tools:context=".MainActivity">
+ 
+-    <TextView
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:text="Hello World!"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintLeft_toLeftOf="parent"
+-        app:layout_constraintRight_toRightOf="parent"
+-        app:layout_constraintTop_toTopOf="parent" />
++    <LinearLayout
++        android:id="@+id/LinearLayoutValores"
++        android:layout_width="match_parent"
++        android:layout_height="198dp"
++        android:orientation="vertical">
++
++        <TextView
++            android:id="@+id/txtValores"
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            android:textAlignment="textEnd"
++            android:textColor="#000000"
++            android:textSize="80sp" />
++    </LinearLayout>
++
++    <LinearLayout
++        android:id="@+id/LinearLayoutSolucion"
++        android:layout_width="match_parent"
++        android:layout_height="147dp"
++        android:orientation="vertical">
++
++        <TextView
++            android:id="@+id/txtSolucion"
++            android:layout_width="match_parent"
++            android:layout_height="137dp"
++            android:textAlignment="textEnd"
++            android:textColor="#AEA3A3"
++            android:textSize="60sp" />
++    </LinearLayout>
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="69dp"
++        android:orientation="horizontal">
++
++        <Button
++            android:id="@+id/btn7"
++            style="?android:attr/buttonBarButtonStyle"
++            android:layout_width="wrap_content"
++            android:layout_height="match_parent"
++            android:layout_weight="1"
++            android:onClick="numeros"
++            android:text="7" />
++
++        <Button
++            android:id="@+id/btn8"
++            style="?android:attr/buttonBarButtonStyle"
++            android:layout_width="wrap_content"
++            android:layout_height="69dp"
++            android:layout_weight="1"
++            android:onClick="numeros"
++            android:text="8" />
++
++
++        <Button
++            android:id="@+id/btn9"
++            style="?android:attr/buttonBarButtonStyle"
++            android:layout_width="wrap_content"
++            android:layout_height="69dp"
++            android:layout_weight="1"
++            android:onClick="numeros"
++            android:text="9" />
++
++        <Button
++            android:id="@+id/btnDel"
++            style="?android:attr/buttonBarButtonStyle"
++            android:layout_width="wrap_content"
++            android:layout_height="69dp"
++            android:layout_weight="1"
++            android:text="DEL" />
++    </LinearLayout>
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="69dp"
++        android:orientation="horizontal">
++
++        <Button
++            android:id="@+id/btn4"
++            style="?android:attr/buttonBarButtonStyle"
++            android:layout_width="wrap_content"
++            android:layout_height="69dp"
++            android:layout_weight="1"
++            android:onClick="numeros"
++            android:text="4" />
++
++        <Button
++            android:id="@+id/btn5"
++            style="?android:attr/buttonBarButtonStyle"
++            android:layout_width="wrap_content"
++            android:layout_height="69dp"
++            android:layout_weight="1"
++            android:onClick="numeros"
++            android:text="5" />
++
++        <Button
++            android:id="@+id/btn6"
++            style="?android:attr/buttonBarButtonStyle"
++            android:layout_width="wrap_content"
++            android:layout_height="69dp"
++            android:layout_weight="1"
++            android:onClick="numeros"
++            android:text="6" />
++
++        <Button
++            android:id="@+id/btnDividir"
++            style="?android:attr/buttonBarButtonStyle"
++            android:layout_width="wrap_content"
++            android:layout_height="69dp"
++            android:layout_weight="1"
++            android:text="/" />
++    </LinearLayout>
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="69dp"
++        android:orientation="horizontal">
++
++        <Button
++            android:id="@+id/btn1"
++            style="?android:attr/buttonBarButtonStyle"
++            android:layout_width="wrap_content"
++            android:layout_height="69dp"
++            android:layout_weight="1"
++            android:onClick="numeros"
++            android:text="1" />
++
++        <Button
++            android:id="@+id/btn2"
++            style="?android:attr/buttonBarButtonStyle"
++            android:layout_width="wrap_content"
++            android:layout_height="69dp"
++            android:layout_weight="1"
++            android:onClick="numeros"
++            android:text="2" />
++
++        <Button
++            android:id="@+id/btn3"
++            style="?android:attr/buttonBarButtonStyle"
++            android:layout_width="wrap_content"
++            android:layout_height="69dp"
++            android:layout_weight="1"
++            android:onClick="numeros"
++            android:text="3" />
++
++        <Button
++            android:id="@+id/btnMultiplicar"
++            style="?android:attr/buttonBarButtonStyle"
++            android:layout_width="wrap_content"
++            android:layout_height="69dp"
++            android:layout_weight="1"
++            android:text="*" />
++    </LinearLayout>
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="69dp"
++        android:orientation="horizontal">
++
++        <Button
++            android:id="@+id/btnComa"
++            style="?android:attr/buttonBarButtonStyle"
++            android:layout_width="wrap_content"
++            android:layout_height="69dp"
++            android:layout_weight="1"
++            android:onClick="numeros"
++            android:text="," />
++
++        <Button
++            android:id="@+id/btn0"
++            style="?android:attr/buttonBarButtonStyle"
++            android:layout_width="wrap_content"
++            android:layout_height="69dp"
++            android:layout_weight="1"
++            android:onClick="numeros"
++            android:text="0" />
++
++        <Button
++            android:id="@+id/btnMenos"
++            style="?android:attr/buttonBarButtonStyle"
++            android:layout_width="wrap_content"
++            android:layout_height="69dp"
++            android:layout_weight="1"
++            android:text="-" />
+ 
+-</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
++        <Button
++            android:id="@+id/btnMas"
++            style="?android:attr/buttonBarButtonStyle"
++            android:layout_width="wrap_content"
++            android:layout_height="69dp"
++            android:layout_weight="1"
++            android:text="+" />
++    </LinearLayout>
++
++    <Button
++        android:id="@+id/btnIgual"
++        style="?android:attr/buttonBarButtonStyle"
++        android:layout_width="match_parent"
++        android:layout_height="110dp"
++        android:text="="
++        android:textSize="70sp" />
++</LinearLayout>
+\ No newline at end of file
+Index: ../Ejercicio8/app/src/main/java/com/example/ejercicio8/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ejercicio8\r\n\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport android.os.Bundle\r\nimport android.widget.*\r\nimport org.w3c.dom.Text\r\n\r\nclass MainActivity : AppCompatActivity() {\r\n\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_main)\r\n\r\n\r\n        var etNombre: EditText = findViewById(R.id.etNombre)\r\n        var lista: ArrayList<Encuesta> = ArrayList(0)\r\n        var barra: SeekBar = findViewById(R.id.sbHoras)\r\n        var numeroHoras: TextView = findViewById(R.id.txtHoras)\r\n        var validar: Button = findViewById(R.id.btnValidar)\r\n        var reinicar: Button = findViewById(R.id.btnReinicar)\r\n        var cuantas: Button = findViewById(R.id.btnCuantas)\r\n        var resumen: Button = findViewById(R.id.btnResumen)\r\n        var groupSistema: RadioGroup = findViewById(R.id.rgSistema)\r\n        var anonimo: Switch = findViewById(R.id.swAnonimo)\r\n        var txtLista: TextView = findViewById(R.id.txtLista)\r\n        numeroHoras.setText(barra.progress.toString())\r\n\r\n        barra.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {\r\n            override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {\r\n                var s = seekBar.progress.toString()\r\n                numeroHoras.setText(s)\r\n            }\r\n\r\n            override fun onStartTrackingTouch(seekBar: SeekBar?) {}\r\n            override fun onStopTrackingTouch(seekBar: SeekBar) {}\r\n        })\r\n\r\n        validar.setOnClickListener() {\r\n\r\n            var nombre: String = if (anonimo.isChecked) {\r\n                getString(R.string.anonimo)\r\n            } else {\r\n\r\n                etNombre.text.toString()\r\n            }\r\n            var radioSistema: RadioButton = findViewById(groupSistema.checkedRadioButtonId)\r\n            var sistemaOperativo = radioSistema.text.toString()\r\n            var especialidades = ArrayList<String>(0)\r\n            var ckbDam: CheckBox = findViewById(R.id.cbDAM)\r\n            if (ckbDam.isChecked) especialidades.add(ckbDam.text.toString())\r\n            var ckbAsir: CheckBox = findViewById(R.id.cbASIR)\r\n            if (ckbAsir.isChecked) especialidades.add(ckbAsir.text.toString())\r\n            var ckbDaw: CheckBox = findViewById(R.id.cbDAW)\r\n            if (ckbDaw.isChecked) especialidades.add(ckbDaw.text.toString())\r\n            var textNumHoras: TextView = findViewById(R.id.txtHoras)\r\n            var numHoras = textNumHoras.text.toString().toInt()\r\n            lista.add(Encuesta(nombre, sistemaOperativo, especialidades, numHoras))\r\n            Toast.makeText(this, getString(R.string.correcto), Toast.LENGTH_SHORT).show()\r\n            reestablecerValores(etNombre, radioSistema, ckbDam, ckbAsir, ckbDaw)\r\n        }\r\n\r\n        reinicar.setOnClickListener() {\r\n            txtLista.setText(\"\")\r\n            lista.clear()\r\n        }\r\n\r\n        cuantas.setOnClickListener() {\r\n            var cadena:String = getString(R.string.estudiantes) + \": \" + lista.count().toString()\r\n            Toast.makeText(this,cadena, Toast.LENGTH_SHORT).show()\r\n        }\r\n        resumen.setOnClickListener() {\r\n            txtLista.text = lista.toString()\r\n        }\r\n    }\r\n\r\n    private fun reestablecerValores(etNombre: EditText, radioSistema: RadioButton, ckbDam: CheckBox, ckbAsir: CheckBox, ckbDaw: CheckBox) {\r\n        etNombre.setText(\"\")\r\n        radioSistema.isChecked = false\r\n        ckbDam.isChecked = false\r\n        ckbAsir.isChecked = false\r\n        ckbDaw.isChecked = false\r\n    }\r\n}\r\n\r\ndata class Encuesta(\r\n    var nombre: String,\r\n    var so: String,\r\n    var especialidades: ArrayList<String>,\r\n    var horasEstudio: Int\r\n) {\r\n    override fun toString(): String {\r\n        var msg = \"Encuesta($nombre, $so, [\"\r\n        for (especialidad in especialidades) {\r\n            msg += \"$especialidad, \"\r\n        }\r\n        msg = msg.removeRange(msg.length - 2 until msg.length)//con esto eliminamos la coma\r\n        msg += \"], $horasEstudio horas) \\n\"\r\n        return msg\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../Ejercicio8/app/src/main/java/com/example/ejercicio8/MainActivity.kt b/../Ejercicio8/app/src/main/java/com/example/ejercicio8/MainActivity.kt
+--- a/../Ejercicio8/app/src/main/java/com/example/ejercicio8/MainActivity.kt	(revision eaea282d445d1e77ff142511b33aa9c04b483623)
++++ b/../Ejercicio8/app/src/main/java/com/example/ejercicio8/MainActivity.kt	(date 1634626311535)
+@@ -93,7 +93,7 @@
+         for (especialidad in especialidades) {
+             msg += "$especialidad, "
+         }
+-        msg = msg.removeRange(msg.length - 2 until msg.length)//con esto eliminamos la coma
++        msg = msg.removeRange(msg.length - 2 until msg.length)//con esto eliminamos la coma del final.
+         msg += "], $horasEstudio horas) \n"
+         return msg
+     }

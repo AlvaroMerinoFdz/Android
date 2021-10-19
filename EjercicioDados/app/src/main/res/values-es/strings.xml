@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dado</string>
+    <string name="jugar">Vamos a jugar</string>
+    <string name="ordenador">Ordenador</string>
+    <string name="tu">Tu</string>
+</resources>

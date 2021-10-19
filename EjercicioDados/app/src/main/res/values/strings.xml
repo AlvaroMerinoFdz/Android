@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Dice</string>
+    <string name="jugar">Let\'s play</string>
+    <string name="ordenador">Computer</string>
+    <string name="tu">You</string>
+</resources>
