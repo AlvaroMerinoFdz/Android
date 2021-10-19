@@ -20,8 +20,8 @@ class MainActivity : AppCompatActivity() {
 
 
         boton.setOnClickListener(){
-            var s1 = Integer.parseInt(sumando1.text.toString())
-            var s2 = Integer.parseInt(sumando2.text.toString())
+            var s1 = sumando1.text.toString().toInt()
+            var s2 = sumando2.text.toString().toInt()
             var resultado = s1+s2
             resul.text = "${getString(R.string.resul)} : $resultado"
             Toast.makeText(this,"Sumando...", Toast.LENGTH_LONG).show()
