@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="anonimo">anonimo</string>
+    <string name="app_name">Encuesta</string>
+    <string name="correcto">Validación Correcta</string>
+    <string name="cuantas">¿Cuantas?</string>
+    <string name="especialidad">Especialidad</string>
+    <string name="estudiantes">Estudiantes</string>
+    <string name="horas">Horas de estudio</string>
+    <string name="linux">Linux</string>
+    <string name="mac">Mac</string>
+    <string name="nombre">Nombre</string>
+    <string name="reiniciar">Reinicar</string>
+    <string name="resumen">Resumen</string>
+    <string name="sistema">Sistema operativo Preferido</string>
+    <string name="tu">Tu Nombre</string>
+    <string name="validar">Validar</string>
+    <string name="windows">Windows</string>
+</resources>
