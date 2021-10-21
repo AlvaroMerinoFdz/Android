@@ -3,5 +3,5 @@
     <string name="app_name">Dado</string>
     <string name="jugar">Vamos a jugar</string>
     <string name="ordenador">Ordenador</string>
-    <string name="tu">Tu</string>
+    <string name="tu">Tú</string>
 </resources>

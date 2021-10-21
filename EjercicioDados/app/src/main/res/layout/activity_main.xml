@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="389dp"
         android:layout_height="218dp"
         android:orientation="horizontal"
@@ -26,11 +27,11 @@
 
         <ImageView
             android:id="@+id/imgTuya"
+            style="@style/imagen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            tools:srcCompat="@tools:sample/avatars"
-            style="@style/imagen"/>
+            tools:srcCompat="@tools:sample/avatars" />
     </LinearLayout>
 
     <Button
@@ -74,5 +75,15 @@
             tools:srcCompat="@tools:sample/avatars"
             />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/btnJugar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        style="@style/texto"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Adivinar</string>
+    <string name="numero">Tu numero</string>
+    <string name="num">Número</string>
+    <string name="intentar">Intentar</string>
+</resources>
