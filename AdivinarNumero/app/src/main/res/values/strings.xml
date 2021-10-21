@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Adivinar</string>
+    <string name="numero">Your Number</string>
+    <string name="num">Number</string>
+    <string name="intentar">Try</string>
+</resources>
