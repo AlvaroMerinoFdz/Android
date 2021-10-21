@@ -1,0 +1,2 @@
+com/example/adivinarnumero/BuildConfig.java
+ com.example.adivinarnumero.BuildConfig
